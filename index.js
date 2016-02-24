@@ -34,6 +34,7 @@ server.use(restify.queryParser());
 server.get('/names', handleNames);
 server.get('/names/:id', handleName);
 
-server.listen(8080, function() {
-  console.log('%s listening at %s', server.name, server.url);
+var port = process.env.PORT || 8080;
+server.listen(port, function() {
+  console.log('Listening on ' + port);
 })
