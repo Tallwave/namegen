@@ -31,6 +31,8 @@ function handleName(req, res, next) {
 
 var server = restify.createServer();
 server.use(restify.queryParser());
+server.use(restify.CORS());
+
 server.get('/names', handleNames);
 server.get('/names/:id', handleName);
 
